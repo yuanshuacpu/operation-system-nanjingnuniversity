@@ -1,8 +1,6 @@
-*
-!*/
-!.gitignore
-!Makefile
-!*.c
-!*.h
-!*.cpp
-code
+.cache
+.shadow
+.vscode
+*.out
+*.o
+build
