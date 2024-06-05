@@ -1,0 +1,40 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/x86_64-linux-gnu-gcc",
+      "-std=gnu11",
+      "-g3",
+      "-O0",
+      "-Wall",
+      "-Werror",
+      "-I/home/code/code/include",
+      "-I/home/code/my-mechine/abstract-machine/am/include/",
+      "-I/home/code/my-mechine/abstract-machine/klib/include/",
+      "-D__ISA__=\"x86_64\"",
+      "-D__ISA_X86_64__",
+      "-D__ARCH__=x86_64-qemu",
+      "-D__ARCH_X86_64_QEMU",
+      "-D__PLATFORM__=qemu",
+      "-D__PLATFORM_QEMU",
+      "-DARCH_H=\"arch/x86_64-qemu.h\"",
+      "-fno-asynchronous-unwind-tables",
+      "-fno-builtin",
+      "-fno-stack-protector",
+      "-Wno-main",
+      "-U_FORTIFY_SOURCE",
+      "-fvisibility=hidden",
+      "-m64",
+      "-fPIC",
+      "-mno-sse",
+      "-g3",
+      "-O0",
+      "-c",
+      "-o",
+      "/home/code/code/build/x86_64-qemu/hello.o",
+      "/home/code/code/hello.c"
+    ],
+    "directory": "/home/code/code",
+    "file": "/home/code/code/hello.c",
+    "output": "/home/code/code/build/x86_64-qemu/hello.o"
+  }
+]

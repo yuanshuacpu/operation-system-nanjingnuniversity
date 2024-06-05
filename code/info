@@ -1,0 +1,18 @@
+# Building hello-image [x86_64-qemu]
+/home/code/my-mechine/abstract-machine/Makefile:123: target 'am' does not exist
+make -s -C /home/code/my-mechine/abstract-machine/am archive
+# Building am-archive [x86_64-qemu]
+/home/code/my-mechine/abstract-machine/Makefile:123: target 'klib' does not exist
+make -s -C /home/code/my-mechine/abstract-machine/klib archive
+# Building klib-archive [x86_64-qemu]
+/home/code/my-mechine/abstract-machine/Makefile:103: update target '/home/code/code/build/x86_64-qemu/hello.o' due to: hello.c
+mkdir -p /home/code/code/build/x86_64-qemu/ && echo + CC hello.c
+x86_64-linux-gnu-gcc -std=gnu11 -g3  -O0 -MMD -Wall -Werror -I/home/code/code/include -I/home/code/my-mechine/abstract-machine/am/include/ -I/home/code/my-mechine/abstract-machine/klib/include/ -D__ISA__=\"x86_64\" -D__ISA_X86_64__ -D__ARCH__=x86_64-qemu -D__ARCH_X86_64_QEMU -D__PLATFORM__=qemu -D__PLATFORM_QEMU -DARCH_H=\"arch/x86_64-qemu.h\" -fno-asynchronous-unwind-tables -fno-builtin -fno-stack-protector -Wno-main -U_FORTIFY_SOURCE -fvisibility=hidden -m64 -fPIC -mno-sse -g3 -O0 -c -o /home/code/code/build/x86_64-qemu/hello.o /home/code/code/hello.c
+/home/code/my-mechine/abstract-machine/Makefile:127: update target '/home/code/code/build/hello-x86_64-qemu.elf' due to: /home/code/code/build/x86_64-qemu/hello.o /home/code/my-mechine/abstract-machine/am/build/am-x86_64-qemu.a /home/code/my-mechine/abstract-machine/klib/build/klib-x86_64-qemu.a
+echo \# Creating image [x86_64-qemu]
+echo + LD "->" build/hello-x86_64-qemu.elf
+x86_64-linux-gnu-ld -z noexecstack -melf_x86_64 -N -Ttext-segment=0x00100000 -o /home/code/code/build/hello-x86_64-qemu.elf --start-group /home/code/code/build/x86_64-qemu/hello.o /home/code/my-mechine/abstract-machine/am/build/am-x86_64-qemu.a /home/code/my-mechine/abstract-machine/klib/build/klib-x86_64-qemu.a --end-group
+/home/code/my-mechine/abstract-machine/scripts/platform/qemu.mk:15: update target 'image' due to: image-dep
+make -s -C /home/code/my-mechine/abstract-machine/am/src/x86/qemu/boot
+echo + CREATE "->" build/hello-x86_64-qemu
+( cat /home/code/my-mechine/abstract-machine/am/src/x86/qemu/boot/bootblock.o; head -c 1024 /dev/zero; cat /home/code/code/build/hello-x86_64-qemu.elf ) > /home/code/code/build/hello-x86_64-qemu
