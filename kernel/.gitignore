@@ -1,0 +1,8 @@
+*
+!Makefile
+!README
+!LICENSE
+!*.cpp
+build/
+!.gitignore
+.vscode

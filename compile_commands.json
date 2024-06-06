@@ -7,7 +7,7 @@
       "-O0",
       "-Wall",
       "-Werror",
-      "-I/home/code/code/include",
+      "-I/home/code/kernel/include",
       "-I/home/code/my-mechine/abstract-machine/am/include/",
       "-I/home/code/my-mechine/abstract-machine/klib/include/",
       "-D__ISA__=\"x86_64\"",
@@ -30,11 +30,11 @@
       "-O0",
       "-c",
       "-o",
-      "/home/code/code/build/x86_64-qemu/hello.o",
-      "/home/code/code/hello.c"
+      "/home/code/kernel/build/x86_64-qemu/kernel.o",
+      "/home/code/kernel/kernel.c"
     ],
-    "directory": "/home/code/code",
-    "file": "/home/code/code/hello.c",
-    "output": "/home/code/code/build/x86_64-qemu/hello.o"
+    "directory": "/home/code/kernel",
+    "file": "/home/code/kernel/kernel.c",
+    "output": "/home/code/kernel/build/x86_64-qemu/kernel.o"
   }
 ]
